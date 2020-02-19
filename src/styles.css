@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: PokemonTitle;
+  src: url("assets/Pokemon-Hollow.ttf");
+}
+
+@font-face {
+  font-family: PokemonGb;
+  src: url("assets/Pokemon-Gb.ttf");
+}
+
+body {
+  width: 80%;
+  margin: auto;
+  font-family: PokemonGb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: PokemonTitle;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1 a {
+  color: black;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: dodgerblue dotted 2px;
+}
+
+th, td {
+  padding: 5px 20px;
+}
+
+td {
+  font-size: 0.8em;
+}
+
+button {
+  font-family: Arial, serif;
+  height: 30px;
+  font-size: 1.3em;
+  border-radius: 5px;
+}
+
+select {
+  height: 35px;
+  line-height: 35px;
+  padding: 2px;
+  font-family: PokemonGb;
+  font-size: 0.8em;
+}

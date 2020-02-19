@@ -1,0 +1,22 @@
+<!--<span *ngFor="let pokemonNumber of pokemonNumbers$ | async">#{{pokemonNumber}}, </span> <br>-->
+
+<a routerLink="/draw">Choisir un pokemon au hasard</a>
+
+<table>
+  <thead>
+  <tr>
+    <th>Numéro</th>
+    <th>Nom</th>
+    <th>Types</th>
+    <th>Editer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pokemon of pokemons$ | async">
+    <td>{{pokemon.numero}}</td>
+    <td>{{pokemon.nom}}</td>
+    <td>{{pokemon.types.join(', ')}}</td>
+    <td><a [routerLink]="['pokemon', pokemon.numero]">Editer</a></td>
+  </tr>
+  </tbody>
+</table>
