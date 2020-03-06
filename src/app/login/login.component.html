@@ -1,0 +1,16 @@
+<form>
+  <div class="form-field">
+    <label for="name">Nom du dresseur</label>
+    <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="trainer.name">
+  </div>
+
+  <div class="form-field">
+    <label for="password">Mot de passe du dresseur</label>
+    <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="trainer.password">
+  </div>
+
+  <button (click)="onLogin()">Se connecter</button>
+
+</form>
+
+<p *ngIf="error">{{error}}</p>

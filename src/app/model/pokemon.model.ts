@@ -1,6 +1,6 @@
 export class Pokemon {
-  numero: number;
+  number: number;
   photoUrl: string;
-  nom: string;
+  name: string;
   types: string[] = [];
 }

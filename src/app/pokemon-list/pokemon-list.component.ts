@@ -11,14 +11,12 @@ import {DataService} from '../data.service';
 export class PokemonListComponent implements OnInit {
 
   pokemons$: Observable<Pokemon[]>;
-  pokemonNumbers$: Observable<number[]>;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
     this.pokemons$ = this.dataService.getPokemons();
-    this.pokemonNumbers$ = this.dataService.getPokemonNumeros();
   }
 
 }

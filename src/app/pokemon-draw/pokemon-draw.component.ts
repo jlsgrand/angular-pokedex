@@ -17,6 +17,7 @@ export class PokemonDrawComponent implements OnInit {
   constructor(private dataService: DataService) {
   }
 
+  // On init combine two observables to show one new pokemon each 100 ms
   ngOnInit() {
     this.choiceSub = zip(
       interval(100),

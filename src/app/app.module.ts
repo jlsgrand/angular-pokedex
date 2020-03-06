@@ -5,16 +5,21 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PokemonListComponent} from './pokemon-list/pokemon-list.component';
 import {PokemonDetailsComponent} from './pokemon-details/pokemon-details.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { PokemonDrawComponent } from './pokemon-draw/pokemon-draw.component';
+import {PokemonDrawComponent} from './pokemon-draw/pokemon-draw.component';
+import {TokenInterceptor} from './token.interceptor';
+import {TrainerPokemonListComponent} from './trainer-pokemon-list/trainer-pokemon-list.component';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     PokemonDetailsComponent,
-    PokemonDrawComponent
+    PokemonDrawComponent,
+    TrainerPokemonListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import { PokemonDrawComponent } from './pokemon-draw/pokemon-draw.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
